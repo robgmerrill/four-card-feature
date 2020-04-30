@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  width: 90%;
+  /* width: 90%; */
   margin: 0;
   display: grid;
   place-content: center;
