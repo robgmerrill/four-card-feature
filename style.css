@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,200&display=swap');
 
 * {
-  /* margin: 0; */
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  /* width: 90%; */
   margin: 0;
   display: grid;
   place-content: center;
@@ -88,7 +86,40 @@ body {
   right: 28px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 500px) {
+  .card-container {
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 15px;
+    grid-template-areas:
+      'a a a b b b'
+      'c c c d d d';
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .card:first-of-type {
+    grid-area: a;
+  }
+
+  .card:nth-of-type(2) {
+    grid-area: b;
+  }
+
+  .card:nth-of-type(3) {
+    grid-area: c;
+  }
+
+  .card:last-of-type {
+    grid-area: d;
+  }
+}
+
+@media (min-width: 700px) {
   body {
     width: 100vw;
   }
@@ -101,13 +132,15 @@ body {
   }
 
   .card-container {
-    height: 800px;
+    /* height: 800px; */
     width: 90vw;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    grid-gap: 15px;
     grid-template-areas:
       '. . a a . .'
-      'b b . . c c'
+      'b b a a c c'
+      'b b d d c c'
       '. . d d . .';
   }
 
